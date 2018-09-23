@@ -6,22 +6,23 @@ Shader "Projector/Decal" {
 		_Color ("Main Color", Color) = (1,1,1,1)
 		_ShadowTex ("Cookie", 2D) = "" {}
 		_FalloffTex ("FallOff", 2D) = "" {}
-		
 	}
-	
-	Subshader {
-		Tags {"Queue"="Transparent"}
-		Pass {
-			ZWrite Off
-			ColorMask RGB
-			Blend One One
-			Offset -1, -1
-	
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			#pragma multi_compile_fog
-			#include "UnityCG.cginc"
+
+		Subshader{
+			Tags {"Queue" = "Transparent"}
+			Pass {
+				ZWrite Off
+				ColorMask RGB
+				Blend One One
+				Offset -1, -1
+
+				CGPROGRAM
+				#pragma vertex vert
+				#pragma fragment frag
+				#pragma multi_compile_fog
+				#include "UnityCG.cginc"
+
+				
 			
 			struct v2f {
 				float4 uvShadow : TEXCOORD0;

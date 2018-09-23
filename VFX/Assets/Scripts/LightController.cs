@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightController : vfxController
+public class LightController : MonoBehaviour
 {
     [SerializeField]
     Gradient colorGradient;
@@ -42,14 +42,15 @@ public class LightController : vfxController
     {
         //var main2 = mParticleSys.main;
         //main2.startSpeed = speedLight;
+        
 
-       //Time calculation
-       t += (Time.deltaTime * speedLight) / duration ;
+        //Time calculation
+        t += (Time.deltaTime * speedLight) / duration ;
         mLight.color = colorGradient.Evaluate(t);
 
         //Intensidad luz
         mLight.intensity = intensityOvertime.Evaluate(t);
+
         ///
-        
     }
 }

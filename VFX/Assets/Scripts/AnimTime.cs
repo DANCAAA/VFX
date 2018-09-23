@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimTime : MonoBehaviour {
-
+    public float time;
     Animator mAnimator;
     float animationSpeed;
     public float AnimationSpeed {
@@ -22,7 +22,7 @@ public class AnimTime : MonoBehaviour {
 
     void Update() {
         AnimatorStateInfo state = mAnimator.GetCurrentAnimatorStateInfo(0);
-        float time = state.normalizedTime * state.length * state.speed;
+        time = state.normalizedTime * state.length * state.speed;
         Debug.Log(time);
         mAnimator.speed = animationSpeed;
     }
